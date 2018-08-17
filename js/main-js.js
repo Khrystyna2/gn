@@ -6,26 +6,33 @@ $(document).ready(function() {
 	});
 
 
-	$('#landscapes').on('click', function() {
+	$('.gallery-visible li a').on('click', function(e) {
+		e.preventDefault();
 		$('.gallery-visible li').toggleClass('hide');
-		$('#landscapesDesc').addClass('show');
+		$(this.hash).addClass('show');
 	});
-	$('#people').on('click', function() {
-		$('.gallery-visible li').toggleClass('hide');
-		$('#peopleDesc').addClass('show');
-	});
-	$('#architecture').on('click', function() {
-		$('.gallery-visible li').toggleClass('hide');
-		$('#architectureDesc').addClass('show');
-	});
-	$('#travel').on('click', function() {
-		$('.gallery-visible li').toggleClass('hide');
-		$('#travelDesc').addClass('show');
-	});
+	// $('#people').on('click', function() {
+	// 	$('.gallery-visible li').toggleClass('hide');
+	// 	$('#peopleDesc').addClass('show');
+	// });
+	// $('#architecture').on('click', function() {
+	// 	$('.gallery-visible li').toggleClass('hide');
+	// 	$('#architectureDesc').addClass('show');
+	// });
+	// $('#travel').on('click', function() {
+	// 	$('.gallery-visible li').toggleClass('hide');
+	// 	$('#travelDesc').addClass('show');
+	// });
 
 	$('.gallery-visible__btn').click(function() {
 		$('.gallery-visible li').toggleClass('hide');
-		$('#landscapesDesc, #peopleDesc, #architectureDesc, #travelDesc').removeClass('show');
+		$('#landscapes, #people, #architecture, #travel').removeClass('show');
+	});
+
+	$('.gallery-desc__btn').click(function() {
+		$('body,html').animate({
+			scrollTop: $('.gallery-desc__img').height()
+		}, 1000);
 	});
 	
 });

@@ -75,6 +75,11 @@ nav, .menu{
     left: 75%;
     transition-delay: 0.4s;
 }
+.gallery-visible li a{
+    display: block;
+    height: 100%;
+    width: 100%;
+}
 .gallery-visible li h2,
 .gallery-visible li p,
 .gallery-desc li h2,
